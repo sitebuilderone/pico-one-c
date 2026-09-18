@@ -1,0 +1,22 @@
+// Canvas's reset removes focus outlines. Restore keyboard focus visibility.
+:focus-visible {
+  outline: 2px solid var(--bs-primary) !important;
+  outline-offset: 3px;
+}
+
+// Restore readable spacing for native WordPress content after Canvas's reset.
+.entry-content, .comment-content, .wp-block-post-content {
+  ul, ol { padding-inline-start: 2rem; margin-bottom: 1rem; }
+}
+
+// Keep inherited Bootstrap dark-mode controls in sync with Canvas tokens.
+[data-bs-theme="dark"] {
+  --cnvs-body-bg: var(--bs-body-bg);
+  --cnvs-body-color: var(--bs-body-color);
+  --cnvs-heading-color: var(--bs-heading-color, var(--bs-body-color));
+  --cnvs-contrast-bg: var(--bs-body-bg);
+  --cnvs-contrast-bg-offset: var(--bs-tertiary-bg);
+  @for $step from 0 through 10 {
+    --cnvs-contrast-#{$step * 100}: #{mix(#fff, #212529, $step * 10%)};
+  }
+}

@@ -1,0 +1,26 @@
+///////////////////////////////////////////////////
+// MAIN.SCSS
+// THIS IS THE MAIN SCSS PIPELINE START
+//////////////////////////////////////////////////
+ 
+// Shared entry point for local Gulp builds and Picostrap's browser compiler.
+// Canvas supplies the only Bootstrap CSS in this pipeline.
+@import "canvas/bootstrap/functions";
+@import "theme_variables";
+@import "ninjabootstrap/variables";
+@import "canvas-settings";
+@import "canvas/variables";
+@import "canvas/mixins";
+@import "canvas/bootstrap/bootstrap";
+@import "canvas-components";
+
+
+// THE THEME STUFF 
+@import "wp_basic_styles";      
+@import "picostrap";  
+@import "woocommerce";
+@import "canvas-wordpress";
+
+
+// CUSTOM CSS : THE CHILD THEME STUFF, IF ITS THERE
+@import "custom";

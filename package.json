@@ -1,0 +1,19 @@
+{
+  "name": "pico-one-c",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Canvas Sass build for the Pico One C WordPress child theme",
+  "engines": { "node": ">=20.19.0" },
+  "scripts": {
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "10.5.0",
+    "gulp": "5.0.1",
+    "gulp-postcss": "10.0.0",
+    "gulp-sass": "6.0.1",
+    "sass": "1.100.0"
+  },
+  "browserslist": ["> 0.5%", "last 2 versions", "Firefox ESR", "not dead"]
+}

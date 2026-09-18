@@ -1,0 +1,16 @@
+// Deliberate component list: no sliders, galleries, animation engine, demo
+// layouts, Canvas navigation, icon-font library, or third-party widget bundles.
+@import "canvas/root";
+@import "canvas/layouts";
+@import "canvas/typography";
+@import "canvas/utilities";
+@import "canvas/content";
+@import "canvas/pagetitle";
+@import "canvas/paginations";
+@import "canvas/shortcodes/buttons";
+@import "canvas/shortcodes/promo";
+@import "canvas/shortcodes/feature-box";
+@import "canvas/shortcodes/headings";
+@import "canvas/shortcodes/dividers";
+@import "canvas/shortcodes/pricing";
+@import "canvas/shortcodes/alerts";

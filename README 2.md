@@ -1,18 +1,3 @@
-# Pico One C — Canvas Sass integration
-
-This child theme now builds a selected Canvas 8.0.5 component set on a single Bootstrap 5.3.8 foundation. It keeps Picostrap WordPress/LiveCanvas integration and supports **both local Gulp builds and WordPress Sass compilation**.
-
-See [BUILD.md](BUILD.md) for setup, included components, per-site customization, and packaging. That guide describes this theme's current workflow; the original starter documentation below is retained as a reference and may describe defaults that have changed.
-
----
-
-## Original starter documentation
-
-# pico-one-c
-Picostarp5 child theme for SiteBuilderOne
-
-
-
 # Picostrap5 Child Base Theme
 
 A WordPress child theme for **Picostrap5** - providing a solid foundation for custom WordPress development with Bootstrap 5, LiveCanvas integration, and browser-based SASS compilation.
@@ -134,7 +119,7 @@ wp_enqueue_script('custom', get_stylesheet_directory_uri() . '/js/custom.js', ar
 
 ```php
 // Uncomment in functions.php to add more menus:
-register_nav_menus( array(
+register_nav_menus( array( 
     'third' => __( 'Third Menu', 'picostrap' ),
     'fourth' => __( 'Fourth Menu', 'picostrap' )
 ));

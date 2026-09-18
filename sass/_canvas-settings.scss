@@ -1,0 +1,11 @@
+// Shared defaults. !default lets WordPress Customizer SCSS values take priority.
+// Site-independent Bootstrap overrides also belong in _theme_variables.scss.
+$primary: #1abc9c !default;
+$font-family-base: system-ui, -apple-system, "Segoe UI", sans-serif !default;
+$headings-font-family: $font-family-base !default;
+
+// Canvas-specific inputs can be overridden here before dependent values load.
+$theme-color: $primary !default;
+$body-font: $font-family-base !default;
+$primary-font: $headings-font-family !default;
+$secondary-font: $font-family-base !default;
