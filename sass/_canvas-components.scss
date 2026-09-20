@@ -1,16 +1,24 @@
-// Deliberate component list: no sliders, galleries, animation engine, demo
-// layouts, Canvas navigation, icon-font library, or third-party widget bundles.
+// Canvas core presentation, including all upstream header/menu variants.
 @import "canvas/root";
 @import "canvas/layouts";
 @import "canvas/typography";
 @import "canvas/utilities";
-@import "canvas/content";
+@import "canvas/topbar";
+@import "canvas/header";
+@import "canvas/sliders";
 @import "canvas/pagetitle";
+@import "canvas/content";
+@import "canvas/portfolio";
+@import "canvas/blog";
+@import "canvas/shop";
+@import "canvas/events";
+@import "canvas/shortcodes";
+@import "canvas/forms";
+@import "canvas/footer";
+@import "canvas/widgets";
 @import "canvas/paginations";
-@import "canvas/shortcodes/buttons";
-@import "canvas/shortcodes/promo";
-@import "canvas/shortcodes/feature-box";
-@import "canvas/shortcodes/headings";
-@import "canvas/shortcodes/dividers";
-@import "canvas/shortcodes/pricing";
-@import "canvas/shortcodes/alerts";
+@import "canvas/extras";
+@import "canvas/page-loaders";
+@import "canvas/magnific-popup";
+@import "canvas/animate";
+@import "canvas/dark";

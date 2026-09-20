@@ -59,6 +59,19 @@ add_action( 'wp_enqueue_scripts', function() {
 
 // ADD YOUR CUSTOM PHP CODE DOWN BELOW /////////////////////////
 
+// Canvas discovers its modules from the markup. Use theme URLs on every WP route.
+add_action( 'wp_enqueue_scripts', function () {
+    $uri = get_stylesheet_directory_uri();
+    $path = get_stylesheet_directory();
+    wp_enqueue_style( 'pico-one-c-canvas-icons', $uri . '/css/canvas/font-icons.css', array( 'picostrap-styles' ), filemtime( $path . '/css/canvas/font-icons.css' ) );
+    wp_enqueue_style( 'pico-one-c-canvas-swiper', $uri . '/css/canvas/swiper.css', array( 'picostrap-styles' ), filemtime( $path . '/css/canvas/swiper.css' ) );
+    wp_enqueue_script( 'pico-one-c-canvas', $uri . '/js/canvas/functions.js', array( 'jquery', 'bootstrap5-childtheme' ), filemtime( $path . '/js/canvas/functions.js' ), array( 'strategy' => 'defer', 'in_footer' => true ) );
+    wp_add_inline_script( 'pico-one-c-canvas', 'window.cnvsOptions = Object.assign({}, window.cnvsOptions || {}, ' . wp_json_encode( array(
+        'jsFolder' => $uri . '/js/canvas/',
+        'cssFolder' => $uri . '/css/canvas/',
+    ) ) . ');', 'before' );
+}, 110 );
+
 // Local builds do not increment Picostrap's Customizer bundle version.
 // Include the file timestamp so both local and WordPress builds refresh caches.
 add_filter( 'style_loader_src', function ( $src, $handle ) {

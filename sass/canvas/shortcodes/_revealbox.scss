@@ -1,0 +1,408 @@
+/* ----------------------------------------------------------------
+
+	Reveal Boxes
+
+-----------------------------------------------------------------*/
+
+/* ----------------------------------------------------------------
+	Reveal Box - Base
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix} {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: $revealbox-height;
+	overflow: hidden;
+	border-radius: $revealbox-radius;
+	background-color: var(--#{$cnvs-prefix}contrast-200);
+	isolation: isolate;
+
+	> img,
+	.#{$revealbox-prefix}-image {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 0;
+		@include transition(transform $revealbox-transition);
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background: $revealbox-scrim;
+		pointer-events: none;
+	}
+
+	&:hover,
+	&:focus-visible,
+	&.is-active {
+		> img,
+		.#{$revealbox-prefix}-image { transform: scale($revealbox-img-scale); }
+	}
+
+	&:focus-visible {
+		outline: 2px solid var(--#{$cnvs-prefix}themecolor);
+		outline-offset: 3px;
+	}
+}
+
+.#{$revealbox-prefix}-content {
+	position: absolute;
+	inset: auto 0 0 0;
+	z-index: 3;
+	padding: $revealbox-padding;
+	color: $revealbox-color;
+	@include transition(transform $revealbox-transition);
+}
+
+.#{$revealbox-prefix}-subtitle {
+	display: block;
+	font-size: $revealbox-subtitle-size;
+	font-weight: 600;
+	letter-spacing: $revealbox-subtitle-ls;
+	text-transform: uppercase;
+	color: $revealbox-kicker;
+	margin-bottom: 0.5rem;
+}
+
+.#{$revealbox-prefix}-title {
+	font-size: $revealbox-title-size;
+	font-weight: 600;
+	line-height: 1.25;
+	color: $revealbox-color;
+	margin-bottom: 0;
+}
+
+.#{$revealbox-prefix}-icon {
+	display: block;
+	font-size: $revealbox-icon-size;
+	line-height: 1;
+	margin-bottom: 1rem;
+	@include transition(transform $revealbox-transition, opacity $revealbox-transition);
+}
+
+.#{$revealbox-prefix}-reveal {
+	overflow: hidden;
+	opacity: 0;
+	@include transition(opacity $revealbox-transition, transform $revealbox-transition);
+	transform: translate3d(0, 0.75rem, 0);
+
+	p {
+		font-size: $revealbox-desc-size;
+		line-height: 1.65;
+		color: $revealbox-muted;
+		margin: 0.75rem 0 0;
+	}
+
+	.#{$revealbox-prefix}-link {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		margin-top: 1rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+		color: $revealbox-color;
+		border-bottom: 1px solid $revealbox-rule;
+		padding-bottom: 2px;
+
+		i { @include transition(transform 0.3s ease); }
+		&:hover i { transform: translateX(4px); }
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 1: Slide Up Reveal
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-slide-up {
+	.#{$revealbox-prefix}-reveal {
+		max-height: 0;
+	}
+
+	&:hover,
+	&:focus-visible,
+	&.is-active {
+		.#{$revealbox-prefix}-reveal {
+			max-height: 16rem;
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 2: Colour Curtain
+	A themed panel wipes up from the bottom behind the content.
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-curtain {
+	.#{$revealbox-prefix}-subtitle {
+		color: rgba(var(--#{$cnvs-prefix}contrast-rgb), $revealbox-kicker-alpha-fill);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		background-color: $revealbox-overlay;
+		background-image: linear-gradient(
+			rgba(var(--#{$prefix}black-rgb), $revealbox-overlay-shade),
+			rgba(var(--#{$prefix}black-rgb), $revealbox-overlay-shade)
+		);
+		opacity: $revealbox-overlay-op;
+		transform: translate3d(0, 100%, 0);
+		@include transition(transform $revealbox-transition);
+	}
+
+	.#{$revealbox-prefix}-reveal { max-height: 0; }
+
+	&:hover,
+	&:focus-visible,
+	&.is-active {
+		&::before { transform: translate3d(0, 0, 0); }
+
+		.#{$revealbox-prefix}-reveal {
+			max-height: 16rem;
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 3: Icon Swap
+	Icon lifts away as the copy slides in behind it.
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-icon-swap {
+	// content is centred, so a bottom-only scrim leaves it unreadable on pale
+	// artwork; use an even veil across the whole surface instead.
+	&::after {
+		background: rgba(var(--#{$prefix}black-rgb), $revealbox-veil-op);
+	}
+
+	.#{$revealbox-prefix}-content {
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+	}
+
+	.#{$revealbox-prefix}-reveal { max-height: 0; }
+
+	&:hover,
+	&:focus-visible,
+	&.is-active {
+		.#{$revealbox-prefix}-icon {
+			transform: translate3d(0, -0.5rem, 0) scale(0.8);
+			opacity: 0;
+			margin-bottom: 0;
+		}
+
+		.#{$revealbox-prefix}-reveal {
+			max-height: 16rem;
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 4: Side Wipe
+	Panel wipes in horizontally; respects RTL via logical properties.
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-side-wipe {
+	.#{$revealbox-prefix}-subtitle {
+		color: rgba(var(--#{$cnvs-prefix}contrast-rgb), $revealbox-kicker-alpha-fill);
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 2;
+		background-color: $revealbox-overlay;
+		background-image: linear-gradient(
+			rgba(var(--#{$prefix}black-rgb), $revealbox-overlay-shade),
+			rgba(var(--#{$prefix}black-rgb), $revealbox-overlay-shade)
+		);
+		opacity: $revealbox-overlay-op;
+		transform: translate3d(-100%, 0, 0);
+		@include transition(transform $revealbox-transition);
+	}
+
+	.#{$revealbox-prefix}-content {
+		inset: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+	}
+
+	.#{$revealbox-prefix}-reveal { max-height: 0; }
+
+	&:hover,
+	&:focus-visible,
+	&.is-active {
+		&::before { transform: translate3d(0, 0, 0); }
+
+		.#{$revealbox-prefix}-reveal {
+			max-height: 16rem;
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 5: Horizontal Accordion
+	Layout comes from the Bootstrap grid (.row + .col-12 .col-md); this
+	only adds the grow-on-interact behaviour, so stacking on small
+	screens is handled by the framework rather than a custom media query.
+-----------------------------------------------------------------*/
+.#{$revealbox-prefix}-accordion {
+	> [class*="col-"] {
+		@include transition(flex-grow $revealbox-transition);
+	}
+
+	> [class*="col-"]:has(.#{$revealbox-prefix}:hover),
+	> [class*="col-"]:has(.#{$revealbox-prefix}:focus-visible),
+	> [class*="col-"]:has(.#{$revealbox-prefix}.is-active) {
+		flex-grow: $revealbox-accordion-grow;
+	}
+
+	.#{$revealbox-prefix} {
+		.#{$revealbox-prefix}-reveal { max-height: 0; }
+
+		.#{$revealbox-prefix}-title {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+
+		&:hover,
+		&:focus-visible,
+		&.is-active {
+			.#{$revealbox-prefix}-reveal {
+				max-height: 16rem;
+				opacity: 1;
+				transform: translate3d(0, 0, 0);
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.#{$revealbox-prefix} .#{$revealbox-prefix}-reveal {
+			max-height: 16rem;
+			opacity: 1;
+			transform: none;
+		}
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Style 6: List Rows
+	Full width rows; a themed fill sweeps across on hover.
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-list {
+	.#{$revealbox-prefix}-row {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: 1.5rem;
+		min-height: $revealbox-list-height;
+		padding: 1.5rem $revealbox-padding;
+		overflow: hidden;
+		border-bottom: 1px solid var(--#{$cnvs-prefix}contrast-200);
+		color: var(--#{$cnvs-prefix}heading-color);
+		isolation: isolate;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background-color: $revealbox-overlay;
+			transform: translate3d(0, 100%, 0);
+			@include transition(transform $revealbox-transition);
+		}
+
+		&:last-child { border-bottom: 0; }
+
+		.#{$revealbox-prefix}-index {
+			font-size: 0.8125rem;
+			font-weight: 700;
+			font-variant-numeric: tabular-nums;
+			color: rgba(var(--#{$cnvs-prefix}contrast-rgb), $revealbox-index-alpha);
+			@include transition(color $revealbox-transition);
+		}
+
+		.#{$revealbox-prefix}-title { color: inherit; }
+
+		.#{$revealbox-prefix}-row-media {
+			width: 0;
+			height: 88px;
+			margin-inline-start: auto;
+			border-radius: 0.5rem;
+			overflow: hidden;
+			opacity: 0;
+			@include transition(width $revealbox-transition, opacity $revealbox-transition);
+
+			img { width: 100%; height: 100%; object-fit: cover; }
+		}
+
+		p {
+			font-size: $revealbox-desc-size;
+			color: var(--#{$cnvs-prefix}contrast-600);
+			margin: 0.25rem 0 0;
+			@include transition(color $revealbox-transition);
+		}
+
+		&:hover,
+		&:focus-visible,
+		&.is-active {
+			color: $revealbox-on-fill;
+
+			&::before { transform: translate3d(0, 0, 0); }
+
+			p { color: $revealbox-on-fill-muted; }
+			.#{$revealbox-prefix}-index { color: $revealbox-on-fill; }
+			.#{$revealbox-prefix}-row-media { width: 132px; opacity: 1; }
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.#{$revealbox-prefix}-row .#{$revealbox-prefix}-row-media { display: none; }
+	}
+}
+
+/* ----------------------------------------------------------------
+	Reveal Box - Sizes
+-----------------------------------------------------------------*/
+
+.#{$revealbox-prefix}-sm { height: $revealbox-height-sm; }
+.#{$revealbox-prefix}-lg { height: calc(#{$revealbox-height} + 100px); }
+
+@include media-breakpoint-down(md) {
+	.#{$revealbox-prefix} { height: $revealbox-height-sm; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.#{$revealbox-prefix},
+	.#{$revealbox-prefix} *,
+	.#{$revealbox-prefix}-row,
+	.#{$revealbox-prefix}-row * {
+		transition: none !important;
+	}
+}
