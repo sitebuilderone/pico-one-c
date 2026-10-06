@@ -1,0 +1,213 @@
+<!--
+SiteBuilderOne homepage starter. Insert once on a full-width LiveCanvas page.
+Use a page template without its own header/footer, or remove the starter's header/footer.
+Before publishing: replace all data-sb1-placeholder content with approved evidence;
+confirm service-area copy; confirm service and privacy URLs.
+Consultation links lead to the confirmed SiteBuilderOne contact page.
+Styles are scoped to this starter; no additional scripts, fonts or libraries are required.
+-->
+<section class="sb1-home" id="sb1-home" aria-label="SiteBuilderOne homepage">
+	<style>
+		.sb1-home{--sb1-ink:#173c35;--sb1-muted:#52645e;--sb1-paper:#faf9f5;--sb1-line:#d9dfd5;--sb1-green:#dce8ce;--sb1-accent:#e5f3a7;color:var(--sb1-ink);background:var(--sb1-paper);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:1rem;line-height:1.65}
+		.sb1-home *{box-sizing:border-box}
+		.sb1-home .sb1-container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+		.sb1-home h1,.sb1-home h2,.sb1-home h3,.sb1-home p,.sb1-home figure{margin:0}
+		.sb1-home h1,.sb1-home h2,.sb1-home h3{color:inherit;font-family:inherit;letter-spacing:-.045em;line-height:1.08;font-weight:600}
+		.sb1-home h1{font-size:clamp(2.7rem,5.7vw,5rem);max-width:720px}
+		.sb1-home h2{font-size:clamp(2rem,3.7vw,3.3rem);max-width:780px}
+		.sb1-home h3{font-size:1.45rem;letter-spacing:-.025em;line-height:1.25}
+		.sb1-home p{color:var(--sb1-muted)}
+		.sb1-home a{color:inherit;text-decoration-thickness:1px;text-underline-offset:5px}
+		.sb1-home a:hover{text-decoration:underline}
+		.sb1-home :focus-visible{outline:3px solid #9b4a1b;outline-offset:5px}
+		.sb1-home [id]{scroll-margin-top:32px}
+		.sb1-home .sb1-section{padding-block:88px}
+		.sb1-home .sb1-eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;color:inherit}
+		.sb1-home .sb1-lead{font-size:1.15rem;max-width:560px;margin-top:26px;line-height:1.65}
+		.sb1-home .sb1-actions{display:flex;flex-wrap:wrap;align-items:center;gap:24px;margin-top:32px}
+		.sb1-home .sb1-button{display:inline-flex;justify-content:center;align-items:center;gap:20px;background:var(--sb1-ink);color:#fff;padding:15px 23px;border:1px solid var(--sb1-ink);border-radius:5px;font-weight:600;line-height:1.4;text-decoration:none}
+		.sb1-home .sb1-button:hover{background:#28564b;color:#fff;text-decoration:none}
+		.sb1-home .sb1-text-link{font-weight:600}
+		.sb1-home .sb1-header{border-bottom:1px solid var(--sb1-line);padding-block:23px}
+		.sb1-home .sb1-nav{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+		.sb1-home .sb1-brand{font-size:1.35rem;font-weight:750;letter-spacing:-.05em;text-decoration:none;white-space:nowrap}
+		.sb1-home .sb1-brand span{display:inline-grid;place-items:center;background:var(--sb1-ink);color:var(--sb1-accent);border-radius:7px;width:34px;height:34px;margin-right:9px;font-size:1.1rem;letter-spacing:-.04em}
+		.sb1-home .sb1-nav-links{display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+		.sb1-home .sb1-nav-links a{font-size:.9rem;text-decoration:none;font-weight:600}
+		.sb1-home .sb1-nav-links a:hover{text-decoration:underline}
+		.sb1-home .sb1-hero{padding-block:82px 72px}
+		.sb1-home .sb1-hero-grid{display:grid;grid-template-columns:1.12fr 1fr;align-items:center;gap:56px}
+		.sb1-home .sb1-hero h1 em{font-style:normal;color:#527348}
+		.sb1-home .sb1-visual{background:var(--sb1-green);border-radius:10px;padding:36px 26px;transform:rotate(1deg)}
+		.sb1-home .sb1-browser{background:var(--sb1-paper);border:1px solid #bccbb5;border-radius:8px;overflow:hidden;box-shadow:0 20px 45px #173c3515;transform:rotate(-1deg)}
+		.sb1-home .sb1-browser-bar{height:33px;display:flex;align-items:center;gap:5px;padding-inline:12px;border-bottom:1px solid var(--sb1-line)}
+		.sb1-home .sb1-browser-bar i{width:6px;height:6px;border-radius:50%;background:#b9c5b6}
+		.sb1-home .sb1-placeholder{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;text-align:center;padding:36px;min-height:270px;background:repeating-linear-gradient(135deg,transparent,transparent 18px,#173c3504 18px,#173c3504 19px)}
+		.sb1-home .sb1-placeholder strong{font-size:1.2rem;line-height:1.3}
+		.sb1-home .sb1-placeholder p{font-size:.9rem;max-width:280px}
+		.sb1-home .sb1-placeholder-label{font-size:.65rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:1px solid #a6b49e;border-radius:3px;padding:5px 9px}
+		.sb1-home figcaption{font-size:.8rem;color:var(--sb1-muted);margin-top:16px}
+		.sb1-home .sb1-proof{padding-block:26px;border-block:1px solid var(--sb1-line)}
+		.sb1-home .sb1-proof-inner{display:flex;align-items:center;gap:32px}
+		.sb1-home .sb1-proof strong{max-width:260px;line-height:1.35;font-size:1.1rem;flex-shrink:0}
+		.sb1-home .sb1-proof p{font-size:.9rem;max-width:650px}
+		.sb1-home .sb1-section-head{display:flex;justify-content:space-between;align-items:end;gap:32px;margin-bottom:40px}
+		.sb1-home .sb1-section-head p{max-width:360px}
+		.sb1-home .sb1-grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+		.sb1-home .sb1-outcome{border-top:1px solid var(--sb1-line);padding-top:26px}
+		.sb1-home .sb1-number{display:block;font-size:.8rem;font-weight:700;margin-bottom:32px;color:#5b734d}
+		.sb1-home .sb1-outcome p,.sb1-home .sb1-card p{margin-top:18px}
+		.sb1-home .sb1-tint{background:#eef1e8}
+		.sb1-home .sb1-card{padding:32px;background:var(--sb1-paper);border:1px solid var(--sb1-line);border-radius:7px;display:flex;flex-direction:column;align-items:start}
+		.sb1-home .sb1-card .sb1-text-link{margin-top:auto;padding-top:28px}
+		.sb1-home .sb1-work-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+		.sb1-home .sb1-project-image{background:#e2e9dd;border:1px solid var(--sb1-line);border-radius:8px;margin-bottom:25px}
+		.sb1-home .sb1-project:nth-child(2) .sb1-project-image{background:#ede7da}
+		.sb1-home .sb1-project p{margin-top:14px;max-width:500px}
+		.sb1-home .sb1-project .sb1-eyebrow{margin-bottom:12px}
+		.sb1-home .sb1-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}
+		.sb1-home .sb1-principle{padding-block:24px;border-bottom:1px solid var(--sb1-line)}
+		.sb1-home .sb1-principle:first-child{padding-top:0}
+		.sb1-home .sb1-principle h3{font-size:1.2rem;margin-bottom:10px}
+		.sb1-home .sb1-steps{list-style:none;padding:0;margin:40px 0 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+		.sb1-home .sb1-steps li{border-top:1px solid var(--sb1-line);padding-top:24px}
+		.sb1-home .sb1-steps h3{font-size:1.25rem;margin-bottom:15px}
+		.sb1-home .sb1-faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}
+		.sb1-home details{border-bottom:1px solid var(--sb1-line);padding-block:22px}
+		.sb1-home details:first-child{border-top:1px solid var(--sb1-line)}
+		.sb1-home summary{cursor:pointer;font-weight:600;line-height:1.4;padding-right:8px}
+		.sb1-home details p{margin-top:16px;max-width:650px}
+		.sb1-home .sb1-invitation{background:var(--sb1-ink);color:var(--sb1-paper)}
+		.sb1-home .sb1-invitation p{color:#d6e2d9}
+		.sb1-home .sb1-invitation .sb1-button{background:var(--sb1-accent);color:var(--sb1-ink);border-color:var(--sb1-accent)}
+		.sb1-home .sb1-booking-note{margin-top:30px;padding:20px;border:1px dashed #84998b;border-radius:5px;max-width:650px;font-size:.9rem}
+		.sb1-home .sb1-footer{padding-block:48px 24px}
+		.sb1-home .sb1-footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+		.sb1-home .sb1-footer p{font-size:.9rem;margin-top:16px;max-width:330px}
+		.sb1-home .sb1-footer h3{font-size:1rem;margin-bottom:18px}
+		.sb1-home .sb1-footer ul{list-style:none;padding:0;margin:0}
+		.sb1-home .sb1-footer li{margin-bottom:8px;font-size:.9rem}
+		.sb1-home .sb1-footer-bottom{display:flex;justify-content:space-between;gap:24px;border-top:1px solid var(--sb1-line);margin-top:42px;padding-top:22px;font-size:.8rem}
+		@media(max-width:991px){.sb1-home .sb1-hero-grid{gap:30px}.sb1-home .sb1-nav-links{gap:18px}.sb1-home .sb1-nav-links .sb1-button{padding:12px 16px}.sb1-home .sb1-about-grid,.sb1-home .sb1-faq-grid{gap:40px}.sb1-home .sb1-card{padding:24px}.sb1-home .sb1-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+		@media(max-width:767px){.sb1-home .sb1-container{width:calc(100% - 36px)}.sb1-home .sb1-section{padding-block:58px}.sb1-home .sb1-header{padding-block:18px}.sb1-home .sb1-nav{gap:18px}.sb1-home .sb1-nav-links{gap:14px 20px;width:100%}.sb1-home .sb1-nav-links .sb1-button{width:100%}.sb1-home .sb1-hero{padding-block:48px}.sb1-home .sb1-hero-grid,.sb1-home .sb1-grid-3,.sb1-home .sb1-work-grid,.sb1-home .sb1-about-grid,.sb1-home .sb1-faq-grid{grid-template-columns:1fr;gap:32px}.sb1-home .sb1-visual{margin-top:12px;padding:25px 18px;transform:none}.sb1-home .sb1-browser{transform:none}.sb1-home .sb1-section-head,.sb1-home .sb1-proof-inner{flex-direction:column;align-items:start;gap:18px}.sb1-home .sb1-proof strong{max-width:none}.sb1-home .sb1-footer-grid{grid-template-columns:1fr;gap:30px}.sb1-home .sb1-number{margin-bottom:18px}.sb1-home .sb1-footer-bottom{flex-wrap:wrap}.sb1-home .sb1-placeholder{min-height:235px;padding:28px}}
+		@media(max-width:380px){.sb1-home .sb1-steps{grid-template-columns:1fr}.sb1-home .sb1-actions .sb1-button{width:100%}}
+	</style>
+
+	<header class="sb1-header">
+		<nav class="sb1-container sb1-nav" aria-label="Homepage navigation">
+			<a class="sb1-brand" href="#sb1-home" aria-label="SiteBuilderOne home"><span aria-hidden="true">s1</span>SiteBuilderOne</a>
+			<div class="sb1-nav-links">
+				<a href="#sb1-services">Services</a><a href="#sb1-work">Our Work</a><a href="#sb1-about">About</a><a href="#sb1-resources">Resources</a>
+				<a class="sb1-button" href="https://www.sitebuilderone.com/contact">Book a free consultation <span aria-hidden="true">↗</span></a>
+			</div>
+		</nav>
+	</header>
+
+	<section class="sb1-hero" aria-labelledby="sb1-title">
+		<div class="sb1-container sb1-hero-grid">
+			<div class="lc-block" editable="rich">
+				<span class="sb1-eyebrow">Websites built around your business</span>
+				<h1 id="sb1-title">A website that works <em>harder for your business.</em></h1>
+				<p class="sb1-lead">We design, build, and support easy-to-manage WordPress websites for businesses and associations in Abbotsford and the Fraser Valley.</p>
+				<div class="sb1-actions"><a class="sb1-button" href="https://www.sitebuilderone.com/contact">Book a free consultation <span aria-hidden="true">↗</span></a><a class="sb1-text-link" href="#sb1-work">View our work <span aria-hidden="true">→</span></a></div>
+			</div>
+			<figure class="lc-block" data-sb1-placeholder="hero-project">
+				<div class="sb1-visual"><div class="sb1-browser"><div class="sb1-browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><div class="sb1-placeholder" editable="rich"><span class="sb1-placeholder-label">Project image to come</span><strong>Your next chapter, online.</strong><p>This space is reserved for a real SiteBuilderOne project screenshot.</p></div></div></div>
+				<figcaption editable="rich">Featured project · Add an approved client name and project description.</figcaption>
+			</figure>
+		</div>
+	</section>
+
+	<aside class="sb1-proof" aria-label="Client evidence placeholder" data-sb1-placeholder="client-proof">
+		<div class="sb1-container sb1-proof-inner lc-block" editable="rich"><strong>Good work. In our clients’ words.</strong><p><span class="sb1-placeholder-label">Client proof to come</span><br>Add an approved testimonial and attribution here, or a small set of client logos used with permission.</p></div>
+	</aside>
+
+	<section class="sb1-section" aria-labelledby="sb1-outcomes-title">
+		<div class="sb1-container">
+			<div class="sb1-section-head lc-block" editable="rich"><div><span class="sb1-eyebrow">More than a fresh look</span><h2 id="sb1-outcomes-title">Make your website<br>work for you.</h2></div><p>A clear path from finding your business to getting in touch—and a website you feel comfortable managing.</p></div>
+			<div class="sb1-grid-3">
+				<div class="sb1-outcome lc-block" editable="rich"><span class="sb1-number">01 / GET FOUND</span><h3>Help customers find you.</h3><p>Explain what you do and where you work with useful content and a clear structure that supports search visibility.</p></div>
+				<div class="sb1-outcome lc-block" editable="rich"><span class="sb1-number">02 / START CONVERSATIONS</span><h3>Make enquiries easier.</h3><p>Give visitors the information they need, show them why you’re a good fit, and make the next step easy on any screen.</p></div>
+				<div class="sb1-outcome lc-block" editable="rich"><span class="sb1-number">03 / STAY IN CONTROL</span><h3>Manage with confidence.</h3><p>Keep your services, news, and key details up to date with straightforward editing and guidance for your team.</p></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sb1-section sb1-tint" id="sb1-services" aria-labelledby="sb1-services-title">
+		<div class="sb1-container">
+			<div class="sb1-section-head lc-block" editable="rich"><div><span class="sb1-eyebrow">How we can help</span><h2 id="sb1-services-title">Build it. Care for it.<br>Help people find it.</h2></div><p>Start with what your business needs today, with room to grow as your plans evolve.</p></div>
+			<!-- Proposed service-page URLs: confirm or create these destinations before publishing. -->
+			<div class="sb1-grid-3">
+				<article class="sb1-card lc-block" editable="rich"><span class="sb1-number">01 / CREATE</span><h3>Website design &amp; development</h3><p>A WordPress website shaped around your customers, your content, and the actions that matter to your business.</p><p>Clear pages. Thoughtful mobile layouts. Editing that makes sense.</p><a class="sb1-text-link" href="/services/website-design-development/">Explore website design <span aria-hidden="true">↗</span></a></article>
+				<article class="sb1-card lc-block" editable="rich"><span class="sb1-number">02 / MAINTAIN</span><h3>Website management</h3><p>Ongoing help to keep your website current, with a care plan matched to the support your team needs.</p><p>Discuss updates, backups, content changes, and ongoing maintenance.</p><a class="sb1-text-link" href="/services/website-management/">Explore website management <span aria-hidden="true">↗</span></a></article>
+				<article class="sb1-card lc-block" editable="rich"><span class="sb1-number">03 / BE DISCOVERED</span><h3>SEO &amp; local visibility</h3><p>Help search engines and potential customers understand your services and the areas you serve.</p><p>A practical approach to page content, technical foundations, and local presence.</p><a class="sb1-text-link" href="/services/seo-local-visibility/">Explore SEO support <span aria-hidden="true">↗</span></a></article>
+			</div>
+		</div>
+	</section>
+
+	<section class="sb1-section" id="sb1-work" aria-labelledby="sb1-work-title">
+		<div class="sb1-container">
+			<div class="sb1-section-head lc-block" editable="rich"><div><span class="sb1-eyebrow">Selected work</span><h2 id="sb1-work-title">Real businesses.<br>Thoughtful websites.</h2></div><p>Space for two projects that show the challenge, the approach, and what changed.</p></div>
+			<div class="sb1-work-grid">
+				<article class="sb1-project lc-block" data-sb1-placeholder="project-one" editable="rich"><div class="sb1-project-image sb1-placeholder"><span class="sb1-placeholder-label">Portfolio placeholder / 01</span><strong>Approved project screenshot</strong><p>Replace with a real website image and descriptive alt text.</p></div><span class="sb1-eyebrow">Client type · To be confirmed</span><h3>Project name to come</h3><p><strong>The challenge:</strong> Add the client’s actual business need and the problem the website solved.</p><p><strong>The outcome:</strong> Describe the delivered improvement. Include numbers only when documented.</p></article>
+				<article class="sb1-project lc-block" data-sb1-placeholder="project-two" editable="rich"><div class="sb1-project-image sb1-placeholder"><span class="sb1-placeholder-label">Portfolio placeholder / 02</span><strong>Approved project screenshot</strong><p>Replace with a second project that demonstrates a different customer need.</p></div><span class="sb1-eyebrow">Client type · To be confirmed</span><h3>Project name to come</h3><p><strong>The challenge:</strong> Explain what visitors or the client’s team found difficult before the project.</p><p><strong>The outcome:</strong> Explain how the new website helped, using approved client feedback or evidence.</p></article>
+			</div>
+		</div>
+	</section>
+
+	<section class="sb1-section sb1-tint" id="sb1-about" aria-labelledby="sb1-about-title">
+		<div class="sb1-container sb1-about-grid">
+			<div class="lc-block" editable="rich"><span class="sb1-eyebrow">Why SiteBuilderOne</span><h2 id="sb1-about-title">A practical partner.<br>From the first conversation.</h2><p class="sb1-lead">You know your business. We help turn that knowledge into a website that’s useful to your customers and manageable for your team.</p><div class="sb1-actions"><a class="sb1-text-link" href="https://www.sitebuilderone.com/contact">Let’s talk about your website <span aria-hidden="true">→</span></a></div></div>
+			<div>
+				<div class="sb1-principle lc-block" editable="rich"><h3>Straightforward advice</h3><p>Understand your options, priorities, and project scope in plain language, so you can make informed decisions.</p></div>
+				<div class="sb1-principle lc-block" editable="rich"><h3>Easy content editing</h3><p>Update everyday content in WordPress, with a handover that helps you feel comfortable making changes.</p></div>
+				<div class="sb1-principle lc-block" editable="rich"><h3>Performance-conscious development</h3><p>Thoughtful layouts, sensible image sizes, and considered features help keep the experience responsive.</p></div>
+				<div class="sb1-principle lc-block" editable="rich"><h3>Support beyond launch</h3><p>Plan what happens next, from ongoing care to future improvements, with support responsibilities agreed together.</p></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sb1-section" aria-labelledby="sb1-process-title">
+		<div class="sb1-container"><div class="lc-block" editable="rich"><span class="sb1-eyebrow">How it works</span><h2 id="sb1-process-title">A clear path from idea to launch.</h2></div>
+			<ol class="sb1-steps">
+				<li class="lc-block" editable="rich"><span class="sb1-number">01</span><h3>Discovery</h3><p>Talk through your business, your audience, and what your current website is missing. Agree on what success should look like.</p></li>
+				<li class="lc-block" editable="rich"><span class="sb1-number">02</span><h3>Plan</h3><p>Set the pages, content, priorities, and budget. You’ll know what’s included and what we need from you before the build begins.</p></li>
+				<li class="lc-block" editable="rich"><span class="sb1-number">03</span><h3>Build</h3><p>Bring the design and content together in WordPress, with opportunities to review, give feedback, and refine the details.</p></li>
+				<li class="lc-block" editable="rich"><span class="sb1-number">04</span><h3>Launch &amp; support</h3><p>Check the key pages and enquiry paths, launch your website, and walk your team through editing and the agreed support plan.</p></li>
+			</ol>
+		</div>
+	</section>
+
+	<section class="sb1-section sb1-tint" id="sb1-resources" aria-labelledby="sb1-faq-title">
+		<div class="sb1-container sb1-faq-grid">
+			<div class="lc-block" editable="rich"><span class="sb1-eyebrow">A few useful answers</span><h2 id="sb1-faq-title">Before we get started.</h2><p class="sb1-lead">Every project is a little different. Here’s a starting point for our conversation.</p></div>
+			<div>
+				<details class="lc-block"><summary>How much does a website cost?</summary><div editable="rich"><p>It depends on the number of pages, the content, and any features or integrations you need. We’ll talk through your priorities and provide a project scope and quote before work begins.</p></div></details>
+				<details class="lc-block"><summary>How long will it take?</summary><div editable="rich"><p>The schedule depends on the scope and how ready your content is. We’ll agree on milestones during planning and explain where your feedback and approvals fit into the timeline.</p></div></details>
+				<details class="lc-block"><summary>Can I edit the website myself?</summary><div editable="rich"><p>Yes. We build in WordPress so your team can manage everyday content. We’ll explain how to update the areas included in your project and discuss support for more involved changes.</p></div></details>
+				<details class="lc-block"><summary>Can you rebuild an existing website?</summary><div editable="rich"><p>Yes. We’ll review what’s working, what needs to improve, and which content to keep. Planning also covers existing URLs and redirects where needed, so the transition is considered from the start.</p></div></details>
+				<details class="lc-block"><summary>What about hosting and ongoing support?</summary><div editable="rich"><p>We’ll review your hosting setup and discuss a suitable maintenance and support arrangement. Hosting, backups, updates, and response expectations should be confirmed in your proposal.</p></div></details>
+				<details class="lc-block"><summary>What does SEO include?</summary><div editable="rich"><p>Depending on your scope, SEO support can cover page structure, titles and descriptions, crawlability, content improvements, and local business information. We’ll define the work and how progress is reviewed. Search rankings and enquiry volumes aren’t guaranteed.</p></div></details>
+			</div>
+		</div>
+	</section>
+
+	<section class="sb1-section sb1-invitation" id="sb1-consultation" aria-labelledby="sb1-consultation-title">
+		<div class="sb1-container lc-block" editable="rich"><span class="sb1-eyebrow">Let’s take the next step</span><h2 id="sb1-consultation-title">Your business is going places.<br>Let’s build a website that helps.</h2><p class="sb1-lead">In a free consultation, we’ll talk about your business, look at your current website if you have one, and discuss your priorities, questions, and possible next steps.</p>
+			<!-- Confirmed consultation destination: SiteBuilderOne contact page. -->
+			<div class="sb1-actions"><a class="sb1-button" href="https://www.sitebuilderone.com/contact">Book a free consultation <span aria-hidden="true">↗</span></a></div>
+			<p class="sb1-booking-note">Prefer email? Write to <a href="mailto:sitebuilderone@gmail.com">sitebuilderone@gmail.com</a> and tell us a little about your project.</p>
+		</div>
+	</section>
+
+	<footer class="sb1-footer">
+		<div class="sb1-container">
+			<div class="sb1-footer-grid">
+				<div class="lc-block" editable="rich"><a class="sb1-brand" href="#sb1-home"><span aria-hidden="true">s1</span>SiteBuilderOne</a><p>Websites that help your business grow—and are easy to manage.</p><p>For businesses and associations in Abbotsford and the Fraser Valley.</p></div>
+				<div class="lc-block" editable="rich"><h3>Explore our services</h3><ul><li><a href="/services/website-design-development/">Website design &amp; development</a></li><li><a href="/services/website-management/">Website management</a></li><li><a href="/services/seo-local-visibility/">SEO &amp; local visibility</a></li></ul></div>
+				<div class="lc-block" editable="rich"><h3>Let’s connect</h3><a href="https://www.sitebuilderone.com/contact">Book a free consultation <span aria-hidden="true">↗</span></a><p><a href="mailto:sitebuilderone@gmail.com">sitebuilderone@gmail.com</a></p><!-- Add phone and social links only when confirmed. --></div>
+			</div>
+			<div class="sb1-footer-bottom lc-block" editable="rich"><span>© SiteBuilderOne. All rights reserved.</span><!-- Confirm the site's actual WordPress privacy-policy permalink. --><a href="/privacy-policy/">Privacy policy</a></div>
+		</div>
+	</footer>
+</section>

@@ -1,0 +1,52 @@
+<!--
+SiteBuilderOne hero with an enquiry-form card.
+Native Bootstrap layout and theme typography/colors; no header, footer or custom CSS.
+Replace the marked form slot with the local form plugin's shortcode in a LiveCanvas
+shortcode block. Keep that block outside editable="rich" and let the plugin render
+its own fields, validation, nonce and submission handler. Do not paste rendered form
+HTML or scripts from another website. The contact link works until a form is connected.
+Suggested fields: name, email, website (optional), and a short project description.
+-->
+<section class="py-5 bg-body-tertiary" aria-labelledby="sb1-hero-form-title">
+	<div class="container">
+		<div class="row align-items-center g-4">
+			<div class="col-lg-6">
+				<div class="lc-block" editable="rich">
+					<p class="small text-uppercase fw-semibold text-primary mb-3">Websites built around your business</p>
+					<h1 class="display-3 mb-4" id="sb1-hero-form-title">A website that works <span class="text-primary">harder for your business.</span></h1>
+					<p class="lead mb-4">We design, build, and support easy-to-manage WordPress websites for businesses and associations in Abbotsford and the Fraser Valley.</p>
+					<div class="d-flex flex-wrap gap-3">
+						<a class="btn btn-primary px-4 py-3" href="#sb1-hero-enquiry">Let’s talk about your website <span aria-hidden="true">→</span></a>
+						<a class="btn btn-outline-primary px-4 py-3" href="mailto:sitebuilderone@gmail.com">Email us</a>
+					</div>
+				</div>
+				<div class="row g-3 mt-4 pt-4 border-top">
+					<div class="col-sm-4"><div class="lc-block" editable="rich"><h2 class="h6 mb-2">Get found</h2><p class="small mb-0">Help customers discover your business.</p></div></div>
+					<div class="col-sm-4"><div class="lc-block" editable="rich"><h2 class="h6 mb-2">Get enquiries</h2><p class="small mb-0">Make the next step clear and easy.</p></div></div>
+					<div class="col-sm-4"><div class="lc-block" editable="rich"><h2 class="h6 mb-2">Stay in control</h2><p class="small mb-0">Manage your content with confidence.</p></div></div>
+				</div>
+			</div>
+			<div class="col-lg-5 offset-lg-1" id="sb1-hero-enquiry">
+				<div class="card border shadow-sm">
+					<div class="card-body p-4 p-xl-5">
+						<div class="lc-block" editable="rich">
+							<h2 class="h3 mb-3">Let’s start with your website.</h2>
+							<p class="mb-4">Tell us a little about your business and what you’d like to improve. We’ll discuss your priorities and possible next steps in a free consultation.</p>
+						</div>
+						<!-- Replace this entire placeholder with your local form shortcode block. -->
+						<div class="lc-block border rounded bg-body-tertiary p-4 mb-4" data-sb1-placeholder="enquiry-form">
+							<div editable="rich">
+								<p class="small text-uppercase fw-semibold text-body-secondary mb-2">Enquiry form goes here</p>
+								<p class="small mb-3">Add your local form shortcode here. In the meantime, you can get in touch through our contact page.</p>
+								<a class="btn btn-primary w-100" href="https://www.sitebuilderone.com/contact">Book a free consultation</a>
+							</div>
+						</div>
+						<div class="lc-block border-top pt-3" editable="rich">
+							<p class="small mb-0 text-break">Prefer email? <a href="mailto:sitebuilderone@gmail.com">sitebuilderone@gmail.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
