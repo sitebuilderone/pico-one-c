@@ -6,6 +6,24 @@ See [BUILD.md](BUILD.md) for setup, included components, per-site customization,
 
 ---
 
+## Local installation
+
+Meant for local development with Local-WP
+
+Within /themes, install
+
+```
+gh repo clone pico-one-c
+gh repo clone livecanvas-team/picostrap5
+```
+
+within plugins, install:
+
+```
+gh repo clone livecanvas
+gh repo clone wp-sitebuilderone-lite
+```
+
 ## Original starter documentation
 
 # pico-one-c
