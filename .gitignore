@@ -52,3 +52,4 @@ wp-config.php
 /*.zip
 .DS_Store
 css-output/bundle.css
+/css-output/bundle.css
